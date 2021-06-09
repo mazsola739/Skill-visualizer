@@ -1,2 +1,2 @@
 # Skill-visualizer
-//uncornproject =D
+//unicornproject =D
