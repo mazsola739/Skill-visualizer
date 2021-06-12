@@ -38,7 +38,7 @@ function unBoxing(string) {
 function plantUMLing(string) {
     string = string.split("\n");
     string = coloring(string);
-    string[0] = "@startmindmap\n!theme spacelab\ntitle Skill-visualizer\n\n" + string[0];
+    string[0] = "@startmindmap\n!theme spacelab\ntitle Rika's Skill-visualizer\n\n" + string[0];
     string[string.length - 1] = "\nlegend right\n  Rika©\nendlegend\n@endmindmap";
     return string.join("\n");
 }
