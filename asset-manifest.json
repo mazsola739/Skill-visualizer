@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mazsola739/Skill-visualizer/static/css/main.f163f5c5.chunk.css",
+    "main.js": "/mazsola739/Skill-visualizer/static/js/main.bbad07f1.chunk.js",
+    "main.js.map": "/mazsola739/Skill-visualizer/static/js/main.bbad07f1.chunk.js.map",
+    "runtime-main.js": "/mazsola739/Skill-visualizer/static/js/runtime-main.b54536b2.js",
+    "runtime-main.js.map": "/mazsola739/Skill-visualizer/static/js/runtime-main.b54536b2.js.map",
+    "static/js/2.ba7280b9.chunk.js": "/mazsola739/Skill-visualizer/static/js/2.ba7280b9.chunk.js",
+    "static/js/2.ba7280b9.chunk.js.map": "/mazsola739/Skill-visualizer/static/js/2.ba7280b9.chunk.js.map",
+    "static/js/3.f1b6bc18.chunk.js": "/mazsola739/Skill-visualizer/static/js/3.f1b6bc18.chunk.js",
+    "static/js/3.f1b6bc18.chunk.js.map": "/mazsola739/Skill-visualizer/static/js/3.f1b6bc18.chunk.js.map",
+    "index.html": "/mazsola739/Skill-visualizer/index.html",
+    "static/css/main.f163f5c5.chunk.css.map": "/mazsola739/Skill-visualizer/static/css/main.f163f5c5.chunk.css.map",
+    "static/js/2.ba7280b9.chunk.js.LICENSE.txt": "/mazsola739/Skill-visualizer/static/js/2.ba7280b9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b54536b2.js",
+    "static/js/2.ba7280b9.chunk.js",
+    "static/css/main.f163f5c5.chunk.css",
+    "static/js/main.bbad07f1.chunk.js"
+  ]
+}
