@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import plantumlEncoder from 'plantuml-encoder'
 import './App.css';
 import {
@@ -6,42 +6,39 @@ import {
 } from './rikaskill.js'
 import skills from './skills.json'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    const UMLVersion = plsWork(skills)
-    this.state = { jsonToUML: skills, UMLVersion, url: this.createURL(UMLVersion), };
-  }
-  createURL = (UMLVersion) => {
-    var encoded = plantumlEncoder.encode(UMLVersion)
-    var url = 'http://www.plantuml.com/plantuml/img/' + encoded
-    return url
-  }
+const createURL = (UMLVersion) => {
+  var encoded = plantumlEncoder.encode(UMLVersion)
+  var url = 'http://www.plantuml.com/plantuml/img/' + encoded
+  return url
+}
+
+const App = (props) => {
+  const [jsonToUML, setJsonToUML] = useState(skills) //hook
+  const [umlVersion, setUmlVersion] = useState(plsWork(skills))
+  const [url, setUrl] = useState(createURL(plsWork(skills)))
+
   //todo szerkeszteni
-  onSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault()
     const value = JSON.parse(event.target[0].value)
-    const UMLVersion = plsWork(value)
+    const umlVersion = plsWork(value)
 
-    this.setState({
-      jsonToUML: value,
-      UMLVersion,
-      url: this.createURL(UMLVersion)
-    })
+    setJsonToUML(value)
+    setUmlVersion(umlVersion)
+    setUrl(createURL(umlVersion))
   }
 
-  render() {
-    //console.log(this.state)
-    return (
-      <div className="App" >
-        <br />
-        <div><form onSubmit={e => this.onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
-        <div><img alt="" src={this.state.url}></img></div>
-        {/* debug todo blueprint marci dobta a linket diszkordon https://blueprintjs.com/docs/#core/components/collapse --save <pre>{JSON.stringify(this.state.jsonToUML)}</pre>
-        <pre>{`${this.state.UMLVersion}`}</pre> */}
-      </div>
-    )
-  };
+  //console.log(this.state)
+  return (
+    <div className="App" >
+      <br />
+      <div><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
+      <div><img alt="" src={url}></img></div>
+      {/* debug todo blueprint marci dobta a linket diszkordon https://blueprintjs.com/docs/#core/components/collapse --save*/}
+      <pre>{JSON.stringify(jsonToUML)}</pre>
+      <pre>{`${umlVersion}`}</pre>
+    </div>
+  )
 }
 
 export default App;
