@@ -17,27 +17,31 @@
                     "closures": 3,
                     "variables": 8,
                     "math": 8,
-                    "strings": 8,
-                    "arrays": 8,
-                    "objects": 6,
-                    "dates": 6,
-                    "JSON": 5,
+                    "datatypes": {
+                        "strings": 8,
+                        "arrays": 8,
+                        "objects": 6,
+                        "dates": 6,
+                        "JSON": 5
+                    },
                     "async": 2,
                     "promises": 2,
                     "events": 4,
                     "callbackHell": 3,
                     "prototypeInheritence": 4,
-                    "es6": 7,
-                    "es2016": 7,
-                    "es2017": 7,
-                    "es2018": 7,
-                    "es2019": 5,
-                    "es2020": 3,
-                    "es2021": 1
+                    "ES versions": {
+                        "es6": 7,
+                        "es2016": 7,
+                        "es2017": 7,
+                        "es2018": 7,
+                        "es2019": 5,
+                        "es2020": 3,
+                        "es2021": 1
+                    }
                 }
             },
             "Backend": {
-                "nodeJs": 0,
+                "nodeJs": 1,
                 "deno": 0,
                 "webassembly": 0,
                 "v8": 0,
@@ -48,8 +52,8 @@
         "css": {
             "preProcessors": {
                 "sass": 7,
-                "less": 1,
-                "stylus": 1
+                "less": 0,
+                "stylus": 0
             },
             "coreConcepts": {
                 "syntax": 8,
