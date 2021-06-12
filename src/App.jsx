@@ -17,7 +17,7 @@ class App extends React.Component {
     var url = 'http://www.plantuml.com/plantuml/img/' + encoded
     return url
   }
-
+  //todo szerkeszteni
   onSubmit = (event) => {
     event.preventDefault()
     const value = JSON.parse(event.target[0].value)
@@ -31,14 +31,14 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    //console.log(this.state)
     return (
       <div className="App" >
         <br />
         <div><form onSubmit={e => this.onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
         <div><img alt="" src={this.state.url}></img></div>
-        <pre>{JSON.stringify(this.state.jsonToUML)}</pre>
-        <pre>{`${this.state.UMLVersion}`}</pre>
+        {/* debug todo blueprint marci dobta a linket diszkordon https://blueprintjs.com/docs/#core/components/collapse --save <pre>{JSON.stringify(this.state.jsonToUML)}</pre>
+        <pre>{`${this.state.UMLVersion}`}</pre> */}
       </div>
     )
   };

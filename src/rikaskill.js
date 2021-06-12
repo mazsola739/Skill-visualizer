@@ -1,3 +1,5 @@
+//todo optimalization
+
 var baseColor = "#00abf5";
 
 export function plsWork(QQ) {
@@ -6,7 +8,7 @@ export function plsWork(QQ) {
 }
 
 //creating the data's into the shape of needing to plantUML
-
+//todo isleaf isnode 
 function getFormatted(object, prefix) {
     var result = "";
     Object.entries(object).forEach(([k, v], i, { length }) => {
@@ -71,7 +73,7 @@ function color(red, green, blue) {
 //how much lightening?
 function lighting(string) {
     var howManyStars = string.match(/[*]/g).length;
-    return (howManyStars * 1) / 10;
+    return howManyStars / 10;
 }
 
 //getting lightness of the color
