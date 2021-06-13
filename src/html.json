@@ -1,0 +1,24 @@
+{
+    "HTML": {
+        "Editors": 7,
+        "Validator": 8,
+        "Syntax": {
+            "Tags": 7,
+            "Attributes": 6,
+            "Block-level elements": 7,
+            "Inline elements": 7
+        },
+        "Accessibility": {
+            "Semantic elements": 7,
+            "Basic SEO": 5
+        },
+        "HTML Forms": {
+            "Forms": 6,
+            "Input Types": 6
+        },
+        "Graphics": 5,
+        "Media": 5,
+        "APIs": 3,
+        "HTML5 Features": 6
+    }
+}

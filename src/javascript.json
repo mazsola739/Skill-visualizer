@@ -1,0 +1,18 @@
+{
+    "JavaScript ": {
+        "Syntax and Basic Constructs": 0,
+        "Functions": 0,
+        "Object Literals": 0,
+        "Object-Oriented Programming": 0,
+        "Design Patterns": 0,
+        "AJAX": 0,
+        "jQuery": 0,
+        "JavaScript Frameworks": {
+            "React": 1,
+            "Angular": 0,
+            "Ember": 0,
+            "Svelte": 0,
+            "Vue": 0
+        }
+    }
+}

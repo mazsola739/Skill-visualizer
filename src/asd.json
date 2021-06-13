@@ -1,51 +1,76 @@
 {
-    "(SAMPLE) My skills I have learned so far": {
+    "My skills I have learned so far": {
         "HTML": {
-            "Semantic elements": 8,
-            "Basic SEO": 3,
-            "Block-level elements": 7,
-            "Inline elements": 8,
-            "Forms": 7,
-            "Input Types": 6
+            "Semantic elements": 0,
+            "Basic SEO": 0,
+            "Accessibility": 0,
+            "Block-level elements": 0,
+            "Inline elements": 0,
+            "Forms": 0,
+            "Input Types": 0
         },
-        "CSS": {
+        "CSS ": {
             "Display Value Types": 0,
             "The Box Model": 0,
             "Basic positioning": {
-                "Static": 4,
+                "Static": 0,
                 "Absolute": 0,
-                "Fixed": 4,
+                "Fixed": 0,
                 "Flexbox": 0,
                 "CSS Grid": 0,
-                "Floats": 2
+                "Floats": 0
             },
             "Font Styling and Web Fonts": 0,
-            "Backgrounds": 8,
+            "Backgrounds": 0,
             "Pseudo-selectors": 0,
             "Animations and transitions": 0,
-            "Responsive Web Design ": {
-                "@media queries": 2,
+            "Responsive Web Design": {
+                "@media queries ": 0,
                 "Relative sizing units": 0
             },
             "CSS Frameworks": {
-                "Bootstrap": 5
+                "Bootstrap": 0
             }
         },
-        "JavaScript": {
+        "JavaScript ": {
             "Syntax and Basic Constructs": 0,
             "Functions": 0,
             "Object Literals": 0,
             "Object-Oriented Programming": 0,
-            "Design Patterns": 4,
+            "Design Patterns": 0,
+            "AJAX": 0,
+            "jQuery": 0,
             "JavaScript Frameworks": {
-                "React": 0,
+                "React": 1,
                 "Angular": 0,
-                "Vue": 3
+                "Ember": 0,
+                "Svelte": 0,
+                "Vue": 0
             }
         },
-        "Version Control": {
-            "Git": 6,
-            "GitHub": 0
+        "Version Control ": {
+            "Git": 4,
+            "GitHub": 4
+        },
+        "Web Performance": {
+            "Critical rendering path": 1,
+            "Image optimization": 2,
+            "JavaScript minification": 2
+        },
+        "Browser Developer Tools": {
+            "Element inspecting": 3,
+            "Network": 1,
+            "Timeline": 1,
+            "Application profiling": 0,
+            "Resources": 0
+        },
+        "Building Tools": {
+            "VScode": 7,
+            "npm": 5
+        },
+        "Testing": {
+            "Mocha": 0,
+            "Jasmine": 0
         },
         "Soft Skills": {
             "Strong communication": 3,

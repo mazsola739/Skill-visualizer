@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import { Collapse } from 'react-collapse'; //todo
+//import { Collapse } from 'react-collapse';
 import plantumlEncoder from 'plantuml-encoder';
 import './App.css';
 import {
@@ -8,7 +8,11 @@ import {
 import {
   showToMeInPic
 } from './rikaskill.js'
-import skills from './asd.json'
+//import htmlskills from './html.json'
+//import cssskills from './css.json'
+//import javascriptskills from './javascript.json'
+import skills from './otherskills.json'
+
 
 const createUrl = (umlVersion) => {
   var encoded = plantumlEncoder.encode(umlVersion)
@@ -36,10 +40,10 @@ const App = (props) => {
   }
 
   return (
-    <div className="App" >
+    <div className="App">
       <br />
+      <div><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><img alt="" src={imgUrl}></img></div><br />
-      <div><p>Do you want to try? Copy-paste here your JSON =)</p><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><br /><p>Your JSON </p><br />
         <pre>{JSON.stringify(jsonToUml)}</pre>
         <br /><p>Your JSON-Tree</p><br />

@@ -1,0 +1,25 @@
+{
+    "CSS ": {
+        "Display Value Types": 0,
+        "The Box Model": 7,
+        "Basic positioning": {
+            "Static": 7,
+            "Absolute": 7,
+            "Fixed": 7,
+            "Flexbox": 7,
+            "CSS Grid": 7,
+            "Floats": 6
+        },
+        "Font Styling and Web Fonts": 0,
+        "Backgrounds": 0,
+        "Pseudo-selectors": 0,
+        "Animations and transitions": 0,
+        "Responsive Web Design": {
+            "@media queries ": 0,
+            "Relative sizing units": 0
+        },
+        "CSS Frameworks": {
+            "Bootstrap": 0
+        }
+    }
+}
