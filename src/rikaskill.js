@@ -61,7 +61,7 @@ const howManyStars = (string) => {
 const unBoxing = (string) => {
     return string
         .split("\n")
-        .map((el) => (hasStar(el) && isLeaf(el) ? el.replace("* ", "*_ ") : el))
+        .map((el) => (hasStar(el) && isLeaf(el) ? el.replace("* ", "*_ <color:#b22746>") : el))
         .join("\n");
 };
 const givingPlantUmlSetting = (string) => {
@@ -78,7 +78,7 @@ const coloringTheBox = (string) => {
     return string.map((el) => {
         if (!el.includes("_") && el.length > 0) {
             var lightness = lightingWithDepth(el);
-            return el.replace("* ", `*[${shadeOfColor(baseColor, lightness)}] `);
+            return el.replace("* ", `*[${shadeOfColor(baseColor, lightness)}] <color:#464547>`);
         } else {
             return el;
         }
@@ -139,7 +139,6 @@ const creatingNodeFromLeaf = (value) => {
 
 const getFormattedToUml = (string) => {
     string = getFormatted(string, "")
-    console.log(gettingLeaf(string))
     return unBoxing(gettingLeaf(string));
 }
   //☆ ★

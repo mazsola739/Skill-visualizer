@@ -1,0 +1,34 @@
+{
+    "My other skills I have learned so far": {
+        "Version Control ": {
+            "Git": 4,
+            "GitHub": 4
+        },
+        "Web Performance": {
+            "Critical rendering path": 1,
+            "Image optimization": 2,
+            "JavaScript minification": 2
+        },
+        "Browser Developer Tools": {
+            "Element inspecting": 3,
+            "Network": 1,
+            "Timeline": 1,
+            "Application profiling": 0,
+            "Resources": 0
+        },
+        "Building Tools": {
+            "VScode": 7,
+            "npm": 5
+        },
+        "Testing": {
+            "Mocha": 0,
+            "Jasmine": 0
+        },
+        "Soft Skills": {
+            "Strong communication": 3,
+            "Agile problem solving": 3,
+            "Healthy Passion": 6,
+            "Self-Starting Motivation": 6
+        }
+    }
+}
