@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import plantumlEncoder from 'plantuml-encoder'
+//import { Collapse } from 'react-collapse'; //todo
+import plantumlEncoder from 'plantuml-encoder';
 import './App.css';
 import {
   showToMeOnSite
@@ -7,7 +8,7 @@ import {
 import {
   showToMeInPic
 } from './rikaskill.js'
-import skills from './skills.json'
+import skills from './asd.json'
 
 const createUrl = (umlVersion) => {
   var encoded = plantumlEncoder.encode(umlVersion)
@@ -22,7 +23,6 @@ const App = (props) => {
   const [umlVersion, setUmlVersion] = useState(showToMeInPic(skills))
   const [imgUrl, setImgUrl] = useState(createUrl(showToMeInPic(skills)))
 
-  //todo szerkeszteni
   const onSubmit = (event) => {
     event.preventDefault()
     const value = JSON.parse(event.target[0].value)
@@ -40,10 +40,21 @@ const App = (props) => {
       <br />
       <div><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><img alt="" src={imgUrl}></img></div>
-      {/* debug todo blueprint marci dobta a linket diszkordon https://blueprintjs.com/docs/#core/components/collapse --save*/}
-      <pre>{JSON.stringify(jsonToUml)}</pre>
-      <pre>{`${showTheJson}`}</pre>
-      <pre>{`${umlVersion}`}</pre>
+      <div><br /><p>Your JSON </p><br />
+        <pre>{JSON.stringify(jsonToUml)}</pre>
+        <br /><p>Your JSON-Tree</p><br />
+        <pre>{`${showTheJson}`}</pre>
+        <br /><p>Your JSON in plantUML</p><br />
+        <pre>{`${umlVersion}`}</pre></div>
+      {/*<Collapse isOpened={true || false}>
+        <div></div>
+      </Collapse>
+      <Collapse isOpened={true || false}>
+        <div></div>
+      </Collapse>
+      <Collapse isOpened={true || false}>
+        <div></div>
+  </Collapse>*/}
     </div>
   )
 }

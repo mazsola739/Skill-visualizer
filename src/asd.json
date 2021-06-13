@@ -1,25 +1,57 @@
 {
-    "glossary": {
-        "title": "example glossary",
-        "GlossDiv": {
-            "title": "S",
-            "GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-                    "SortAs": "SGML",
-                    "GlossTerm": "Standard Generalized Markup Language",
-                    "Acronym": "SGML",
-                    "Abbrev": "ISO",
-                    "GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-                        "GlossSeeAlso": {
-                            "GML": 1,
-                            "XML": 2
-                        }
-                    },
-                    "GlossSee": "markup"
-                }
+    "(SAMPLE) My skills I have learned so far": {
+        "HTML": {
+            "Semantic elements": 8,
+            "Basic SEO": 3,
+            "Block-level elements": 7,
+            "Inline elements": 8,
+            "Forms": 7,
+            "Input Types": 6
+        },
+        "CSS": {
+            "Display Value Types": 0,
+            "The Box Model": 0,
+            "Basic positioning": {
+                "Static": 4,
+                "Absolute": 0,
+                "Fixed": 4,
+                "Flexbox": 0,
+                "CSS Grid": 0,
+                "Floats": 2
+            },
+            "Font Styling and Web Fonts": 0,
+            "Backgrounds": 8,
+            "Pseudo-selectors": 0,
+            "Animations and transitions": 0,
+            "Responsive Web Design ": {
+                "@media queries": 2,
+                "Relative sizing units": 0
+            },
+            "CSS Frameworks": {
+                "Bootstrap": 5
             }
+        },
+        "JavaScript": {
+            "Syntax and Basic Constructs": 0,
+            "Functions": 0,
+            "Object Literals": 0,
+            "Object-Oriented Programming": 0,
+            "Design Patterns": 4,
+            "JavaScript Frameworks": {
+                "React": 0,
+                "Angular": 0,
+                "Vue": 3
+            }
+        },
+        "Version Control": {
+            "Git": 6,
+            "GitHub": 0
+        },
+        "Soft Skills": {
+            "Strong communication": 3,
+            "Agile problem solving": 3,
+            "Healthy Passion": 6,
+            "Self-Starting Motivation": 6
         }
     }
 }
