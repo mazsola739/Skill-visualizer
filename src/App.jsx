@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import plantumlEncoder from 'plantuml-encoder'
 import './App.css';
 import {
+  showToMe
+} from './rikaskill.js'
+import {
   plsWork
 } from './rikaskill.js'
 import skills from './skills.json'
@@ -13,7 +16,9 @@ const createURL = (UMLVersion) => {
 }
 
 const App = (props) => {
-  const [jsonToUML, setJsonToUML] = useState(skills) //hook
+
+  const [jsonToUML, setJsonToUML] = useState(skills)
+  const [showTheJson, setShowTheJson] = useState(showToMe(skills))
   const [umlVersion, setUmlVersion] = useState(plsWork(skills))
   const [url, setUrl] = useState(createURL(plsWork(skills)))
 
@@ -24,6 +29,7 @@ const App = (props) => {
     const umlVersion = plsWork(value)
 
     setJsonToUML(value)
+    setShowTheJson(value)
     setUmlVersion(umlVersion)
     setUrl(createURL(umlVersion))
   }
@@ -36,6 +42,7 @@ const App = (props) => {
       <div><img alt="" src={url}></img></div>
       {/* debug todo blueprint marci dobta a linket diszkordon https://blueprintjs.com/docs/#core/components/collapse --save*/}
       <pre>{JSON.stringify(jsonToUML)}</pre>
+      <pre>{`${showTheJson}`}</pre>
       <pre>{`${umlVersion}`}</pre>
     </div>
   )

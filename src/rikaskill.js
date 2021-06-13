@@ -7,35 +7,64 @@ export function plsWork(QQ) {
     return plantUMLing(result);
 }
 
-//creating the data's into the shape of needing to plantUML
-//todo isleaf isnode 
-function getFormatted(object, prefix) {
+export function showToMe(QQ) {
+    var result = getVisualizedToSite(QQ, "");
+    return result;
+}
+
+const isLeaf = function (x) {
+    return typeof x === "string"
+}
+
+const isNode = function (x) {
+    return typeof x === "object"
+}
+
+const getVisualizedToSite = function (object, prefix) {
     var result = "";
-    Object.entries(object).forEach(([k, v], i, { length }) => {
-        result += prefix + (i + 1 === length ? "* " : "* ") + k;
-        if (v && typeof v === "object") {
+    Object.entries(object).forEach(([key, value], index, { length }) => {
+        result += prefix + (index + 1 === length ? "└─ " : "├─ ") + key;
+        if (value && isNode(value)) {
             result += "\n";
-            result += getFormatted(v, prefix + (i + 1 === length ? "*" : "*"));
+            result += getVisualizedToSite(value, prefix + (index + 1 === length ? "   " : "│  "));
         } else {
-            if (v || v === 0) result += ": " + v;
+            if (value) result += ": " + value;
+            result += "\n";
+        }
+    });
+    return result;
+}
+
+//creating the data's into the shape of needing to plantUML
+//todo isleaf isnode
+
+const getFormatted = function (object, prefix) {
+    var result = "";
+    Object.entries(object).forEach(([key, value], index, { length }) => {
+        result += prefix + (index + 1 === length ? "* " : "* ") + key;
+        if (value && typeof value === "object") {
+            result += "\n";
+            result += getFormatted(value, prefix + (index + 1 === length ? "*" : "*"));
+        } else {
+            if (value || value === 0) result += ": " + value;
             result += "\n";
         }
     });
     return unBoxing(result);
 }
 //does the children got number?
-function hasNumber(string) {
+const hasNumber = function (string) {
     return /\d/.test(string);
 }
-//last leafs "unboxing"
-function unBoxing(string) {
+//leafs "unboxing"
+const unBoxing = function (string) {
     return string
         .split("\n")
         .map((el) => (hasNumber(el) ? el.replace("* ", "*_ ") : el))
         .join("\n");
 }
 //adding plantUML settings
-function plantUMLing(string) {
+const plantUMLing = function (string) {
     string = string.split("\n");
     string = coloring(string);
     string[0] = "@startmindmap\n!theme spacelab\ntitle Rika's Skill-visualizer\n\n" + string[0];
@@ -44,7 +73,7 @@ function plantUMLing(string) {
 }
 
 //adding color to the boxes
-function coloring(string) {
+const coloring = function (string) {
     return string.map((el) => {
         if (!el.includes("_") && el.length > 0) {
             var lightness = lighting(el)
@@ -56,7 +85,7 @@ function coloring(string) {
 }
 
 //converting colors to hexadecimal
-function rgbToHex(color) {
+const rgbToHex = function (color) {
     color = Math.round(color);
     if (color < 0) color = 0;
     if (color > 255) color = 255;
@@ -66,18 +95,18 @@ function rgbToHex(color) {
 }
 
 //hexadecimal form of colors
-function color(red, green, blue) {
+const color = function (red, green, blue) {
     return "#" + rgbToHex(red) + rgbToHex(green) + rgbToHex(blue);
 }
 
 //how much lightening?
-function lighting(string) {
+const lighting = function (string) {
     var howManyStars = string.match(/[*]/g).length;
     return howManyStars / 10;
 }
 
 //getting lightness of the color
-function shade(col, light) {
+const shade = function (col, light) {
     var r = parseInt(col.substr(1, 2), 16);
     var g = parseInt(col.substr(3, 2), 16);
     var b = parseInt(col.substr(5, 2), 16);
@@ -92,11 +121,3 @@ function shade(col, light) {
     }
     return color(r, g, b);
 }
-
-
-
-//plsWork(skills);
-
-//console.log("Rika");
-//console.log(shade(baseColor, 0.2));
-//console.log(plantUMLing(result));

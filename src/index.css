@@ -13,4 +13,6 @@ code {
     monospace;
 }
 
-xmp{ white-space:pre-wrap; word-wrap:break-word; }
+pre {
+    text-align: left
+  }

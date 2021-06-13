@@ -1,6 +1,6 @@
 {
-    "skills": {
-        "js": {
+    "My skills I have learned so far": {
+        "JavaScript": {
             "Frontend": {
                 "frameworks": {
                     "React": 1,
@@ -49,7 +49,7 @@
                 "spidermonkey": 0
             }
         },
-        "css": {
+        "CSS": {
             "preProcessors": {
                 "sass": 7,
                 "less": 0,
@@ -66,7 +66,7 @@
                 "css3Features": 7
             }
         },
-        "html": {
+        "HTML": {
             "coreConcepts": {
                 "editors": 7,
                 "syntax": 8,
