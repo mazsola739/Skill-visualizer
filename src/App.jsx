@@ -38,7 +38,7 @@ const App = (props) => {
   return (
     <div className="App" >
       <br />
-      <div><img alt="" src={imgUrl}></img></div>
+      <div><img alt="" src={imgUrl}></img></div><br />
       <div><p>Do you want to try? Copy-paste here your JSON =)</p><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><br /><p>Your JSON </p><br />
         <pre>{JSON.stringify(jsonToUml)}</pre>
