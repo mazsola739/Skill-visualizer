@@ -38,8 +38,8 @@ const App = (props) => {
   return (
     <div className="App" >
       <br />
-      <div><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><img alt="" src={imgUrl}></img></div>
+      <div><p>Do you want to try? Copy-paste here your JSON =)</p><form onSubmit={e => onSubmit(e)}><input type="text"></input><button type="submit">Submit</button></form></div><br />
       <div><br /><p>Your JSON </p><br />
         <pre>{JSON.stringify(jsonToUml)}</pre>
         <br /><p>Your JSON-Tree</p><br />
@@ -58,5 +58,75 @@ const App = (props) => {
     </div>
   )
 }
+
+/*
+const { Collapse, UnmountClosed } = ReactCollapse;
+
+const getText = num => text.slice(0, num).map((p, i) => <p key={i}>{p}</p>);
+
+class VariableText extends React.Component {
+  static propTypes = {
+    isOpened: PropTypes.bool
+  };
+
+  static defaultProps = {
+    isOpened: false
+  };
+
+  constructor(props) {
+    super(props);
+    const { isOpened } = this.props;
+    this.state = { isOpened, paragraphs: 1 };
+  }
+
+  render() {
+    const { isOpened, paragraphs } = this.state;
+
+    return (
+      <div>
+        <div className="config">
+          <label className="label">
+            Opened:
+            <input
+              className="input"
+              type="checkbox"
+              checked={isOpened}
+              onChange={({ target: { checked } }) => this.setState({ isOpened: checked })} />
+          </label>
+
+          <label className="label">
+            Paragraphs:
+            <input
+              className="input"
+              type="range"
+              value={paragraphs}
+              step={1}
+              min={0}
+              max={4}
+              onChange={({ target: { value } }) => this.setState({ paragraphs: parseInt(value, 10) })} />
+            {paragraphs}
+          </label>
+        </div>
+
+        <Collapse isOpened={isOpened}>
+          <div className="text">
+            {paragraphs ? getText(paragraphs) : <p>No text</p>}
+          </div>
+        </Collapse>
+      </div>
+    );
+  }
+}
+
+const App = () => (
+  <div className="app">
+    <section className="section">
+      <h2>Your JSON</h2>
+      <VariableText />
+    </section>
+  </div>
+);
+
+ReactDOM.render(<App />, document.querySelector('#app'));*/
 
 export default App;
