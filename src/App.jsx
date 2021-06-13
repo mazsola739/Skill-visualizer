@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { MindMap } from './components/MindMap';
 import MindMapDefault from './components/MindMapDefault';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
+import { UpdateForm } from './components/UpdateForm'
 
 import './App.css';
 
@@ -17,8 +18,8 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <div><form onSubmit={onSubmit}><input type="text"></input><button type="submit">Submit</button></form></div><br />
-      {mindMaps.map(skills => (<MindMap skills={skills} key={uuid()}></MindMap>))}
+      <UpdateForm onSubmit={onSubmit} />
+      {mindMaps.map(skills => (<MindMap skills={skills} key={uuidv4()} />))}
     </div>
   )
 }

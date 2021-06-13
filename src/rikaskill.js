@@ -1,14 +1,7 @@
-export function showToMeInPic(json) {
-    return givingPlantUmlSetting(getFormattedToUml(json, ""));
-}
-export function showToMeOnSite(json) {
-    return getVisualizedToSite(json, "");
-}
-
-var baseColor = "#00abf5";
+const baseColor = "#00abf5";
 
 const getFormatted = (object, prefix) => {
-    var result = "";
+    let result = "";
     Object.entries(object).forEach(([key, value], index, { length }) => {
         result += prefix + (index + 1 === length ? "* " : "* ") + key;
         if (value && isNode(value)) {
@@ -26,7 +19,7 @@ const getFormatted = (object, prefix) => {
 };
 
 const getVisualizedToSite = (object, prefix) => {
-    var result = "";
+    let result = "";
     Object.entries(object).forEach(([key, value], index, { length }) => {
         result += prefix + (index + 1 === length ? "└─ " : "├─ ") + key;
         if (value && isNode(value)) {
@@ -43,28 +36,22 @@ const getVisualizedToSite = (object, prefix) => {
     return result;
 };
 
-const isLeaf = (value) => {
-    return typeof value === "string";
-};
-const isNode = (value) => {
-    return typeof value === "object";
-};
-const hasNumber = (string) => {
-    return /\d/.test(string);
-};
-const hasStar = (string) => {
-    return /☆/.test(string) || /★/.test(string)
-}
-const howManyStars = (string) => {
-    return string.match(/[*]/g).length;
-};
-const unBoxing = (string) => {
-    return string
-        .split("\n")
-        .map((el) => (hasStar(el) && isLeaf(el) ? el.replace("* ", "*_ <color:#b22746>") : el))
-        .join("\n");
-};
-const givingPlantUmlSetting = (string) => {
+const isLeaf = value => typeof value === "string";
+
+const isNode = value => typeof value === "object";
+
+const hasNumber = string => /\d/.test(string);
+
+const hasStar = string => /☆/.test(string) || /★/.test(string)
+
+const howManyStars = string => string.match(/[*]/g).length
+
+const unBoxing = string => string
+    .split("\n")
+    .map((el) => (hasStar(el) && isLeaf(el) ? el.replace("* ", "*_ <color:#b22746>") : el))
+    .join("\n")
+
+const givingPlantUmlSetting = string => {
     string = string.split("\n");
     string = coloringTheBox(string);
     string[0] =
@@ -74,34 +61,32 @@ const givingPlantUmlSetting = (string) => {
     return string.join("\n");
 };
 
-const coloringTheBox = (string) => {
+const coloringTheBox = string => {
     return string.map((el) => {
         if (!el.includes("_") && el.length > 0) {
-            var lightness = lightingWithDepth(el);
+            const lightness = lightingWithDepth(el);
             return el.replace("* ", `*[${shadeOfColor(baseColor, lightness)}] <color:#464547>`);
         } else {
             return el;
         }
     });
 };
-const rgbToHex = (color) => {
+const rgbToHex = color => {
     color = Math.round(color);
     if (color < 0) color = 0;
     if (color > 255) color = 255;
-    var string = color.toString(16);
+    let string = color.toString(16);
     if (string.length < 2) string = "0" + string;
     return string;
 };
-const colorHexForm = (red, green, blue) => {
-    return "#" + rgbToHex(red) + rgbToHex(green) + rgbToHex(blue);
-};
-const lightingWithDepth = (string) => {
-    return howManyStars(string) / 10;
-};
+const colorHexForm = (red, green, blue) => "#" + rgbToHex(red) + rgbToHex(green) + rgbToHex(blue)
+
+const lightingWithDepth = string => (howManyStars(string) * 2) / 10;
+
 const shadeOfColor = (color, light) => {
-    var red = parseInt(color.substr(1, 2), 16);
-    var green = parseInt(color.substr(3, 2), 16);
-    var blue = parseInt(color.substr(5, 2), 16);
+    let red = parseInt(color.substr(1, 2), 16);
+    let green = parseInt(color.substr(3, 2), 16);
+    let blue = parseInt(color.substr(5, 2), 16);
     if (light < 0) {
         red = (1 + light) * red;
         green = (1 + light) * green;
@@ -114,18 +99,16 @@ const shadeOfColor = (color, light) => {
     return colorHexForm(red, green, blue);
 };
 
-const ranking = (num) => {
-    if (num > 8) num = 8
-    if (num < 0) num = 0
-    var whiteStar = 8 - num;
-    var blackStar = num;
-    var result = "★".repeat(blackStar) + "☆".repeat(whiteStar)
-    return result
+const ranking = num => {
+    if (num > 8) num = 8;
+    if (num < 0) num = 0;
+    const whiteStar = 8 - num;
+    const blackStar = num;
+    return "★".repeat(blackStar) + "☆".repeat(whiteStar);
 }
-const gettingLeaf = (string) => {
-    return string.split("\n").map((el) => creatingNodeFromLeaf(el)).join("\n");
-}
-const creatingNodeFromLeaf = (value) => {
+const gettingLeaf = string => string.split("\n").map((el) => creatingNodeFromLeaf(el)).join("\n");
+
+const creatingNodeFromLeaf = value => {
     return value.split("\n").map((el) => {
         if (hasNumber(el)) {
             el = el.split(": ");
@@ -137,8 +120,10 @@ const creatingNodeFromLeaf = (value) => {
     });
 };
 
-const getFormattedToUml = (string) => {
-    string = getFormatted(string, "")
-    return unBoxing(gettingLeaf(string));
-}
+const getFormattedToUml = string => unBoxing(gettingLeaf(getFormatted(string, "")));
+
+export const showToMeInPic = json => givingPlantUmlSetting(getFormattedToUml(json, ""))
+
+export const showToMeOnSite = json => getVisualizedToSite(json, "")
+
   //☆ ★
